@@ -22,8 +22,8 @@
     <!-- END -->
  <target name="war" depends="compile">
 		<war warfile="AntExample.war" needxmlfile="false" >
-			<fileset dir="${source}/com.mycompany.app/"/>
-			<classes dir="build/classes"/>
+			<fileset dir="src/main/java/com/mycompany/app"/>
+			
 		</war>
 		<antcall target="deployTarget"/>
 	</target>
