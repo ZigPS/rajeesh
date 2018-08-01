@@ -4,6 +4,8 @@
  
     <!-- GLOBAL VARIABLES -->
     <property name="source" value="app" />
+	 <property name="base" value="." />
+	 
     <!-- END -->
  
     <!-- AVAILABLE COMMANDS -->
@@ -19,10 +21,14 @@
     </target>
     <!-- END -->
  <target name="war" depends="compile">
-		<war destfile="D:/Jenkins/simple-java-maven-app-master/AntExample.war" >
-			<fileset dir="jenkins"/>
+		<war warfile="AntExample.war" needxmlfile="false" >
+			<fileset dir="${source}/com.mycompany.app/"/>
 			<classes dir="build/classes"/>
 		</war>
+		<antcall target="deployTarget"/>
+	</target>
+	<target name="deployTarget">
+	<copy file="${base}/AntExample.war" todir="C:/Users/rrnambia/.jenkins/workspace/test"> 
 	</target>
     <!-- LIST -->
     <target name="list">
