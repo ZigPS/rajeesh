@@ -18,7 +18,12 @@
         <exec executable="date" />
     </target>
     <!-- END -->
- 
+ <target name="war" depends="compile">
+		<war destfile="D:/Jenkins/simple-java-maven-app-master/AntExample.war" >
+			<fileset dir="jenkins"/>
+			<classes dir="build/classes"/>
+		</war>
+	</target>
     <!-- LIST -->
     <target name="list">
         <echo message="Listing source folder ..."/>
