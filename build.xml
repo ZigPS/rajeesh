@@ -28,7 +28,7 @@
 		<antcall target="deployTarget"/>
 	</target>
 	<target name="deployTarget">
-	<copy file="${base}/AntExample.war" todir="C:/Users/rrnambia/.jenkins/workspace/test"> 
+	<copy file="${base}/AntExample.war" todir="C:/Users/rrnambia/.jenkins/workspace/test" /> 
 	</target>
     <!-- LIST -->
     <target name="list">
