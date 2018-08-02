@@ -83,7 +83,7 @@
     <target name="test-jar" depends="compile-test">
         <jar destfile="${bin.dir}/${ant.project.name}.jar" basedir="${bin.dir}/test-classes">
             <manifest>
-                <attribute name="Main-Class" value="${junit.class.name}"/>
+                <attribute name="Main-Class" value="AppTest"/>
             </manifest>
         </jar>
     </target>
@@ -95,7 +95,7 @@
         <mkdir dir="${report.data.dir}"/>
         <mkdir dir="${report.dir}"/>
         <junit fork="no" haltonfailure="no" showoutput="yes" printsummary="true">
-            <test name="${junit.class.name}" todir="${report.data.dir}"/>
+            <test name="AppTest" todir="${report.data.dir}"/>
             <formatter type="brief" usefile="false"/>
             <formatter type="xml"/>
             <classpath refid="classpath" />
