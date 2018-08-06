@@ -14,8 +14,9 @@ pipeline {
 
         stage ('Testing Stage') {
 		
+		steps {
 		junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
-		            
+		       }     
         }
 
 
