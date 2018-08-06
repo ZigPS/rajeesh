@@ -5,9 +5,11 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_3') {
-                    sh 'mvn clean compile'
-                }
+                git url: 'https://github.com/ZigPS/rajeesh.git'
+  def mvnHome = tool 'maven_3_5_3'
+  sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify"
+  step([$class: 'JUnitResultArchiver', testResults:
+'**/target/foobar/TEST-*.xml'])
             }
         }
 
