@@ -28,6 +28,12 @@ pipeline {
 		       }     
         }
 	    
-        
+         stage ('Deployment Stage') {
+            steps {
+               
+                    sh 'cp /root/.jenkins/workspace/pipeline-example/target/my-app-1.0-SNAPSHOT.jar /scratch/EDP/apache-tomcat-8.5.32/webapps'
+                
+            }
+        }
     }
 }
