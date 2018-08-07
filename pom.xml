@@ -31,6 +31,20 @@
             </manifest>
           </archive>
         </configuration>
+          <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.2</version>
+        <configuration>
+          <overlays>
+            <overlay>
+              <groupId>com.example.projects</groupId>
+              <artifactId>documentedprojectdependency</artifactId>
+              <excludes>
+                <exclude>WEB-INF/classes/images/sampleimage-dependency.jpg</exclude>
+              </excludes>
+            </overlay>
+          </overlays>
+        </configuration>
       </plugin>
     </plugins>
   </build>
