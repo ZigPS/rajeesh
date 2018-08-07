@@ -17,20 +17,19 @@
         <dependency>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-war-plugin</artifactId>
-      <version>3.2.2</version>
+      <version>2.4</version>
       <type>maven-plugin</type>
-          <configuration>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-    </configuration>
-    </dependency>
+        </dependency>
   </dependencies>
   <build>
     <plugins>
       <plugin>
         <!-- Build an executable WAR -->
-        <artifactId>maven-resources-plugin</artifactId>
-          <version>2.6</version>
-        
+        <artifactId>maven-war-plugin</artifactId>
+    <version>2.4</version>
+    <configuration>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </configuration>
       </plugin>
     </plugins>
   </build>
