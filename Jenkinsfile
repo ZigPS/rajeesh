@@ -19,13 +19,15 @@ pipeline {
 		       }     
         }
 
-
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : 'maven_3_5_3') {
-                    sh 'mvn deploy'
+	stage ('Archival Stage') {
+		
+		steps {
+		withMaven(maven : 'maven_3_5_3') {
+                    sh 'mvn package -DskipTests'
                 }
-            }
+		       }     
         }
+	    
+        
     }
 }
