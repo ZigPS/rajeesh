@@ -43,7 +43,7 @@
       <configuration>
         <archive>
           <manifest>
-            <mainClass>com.test.MainClassName</mainClass>
+            <mainClass>com.mycompany.App</mainClass>
           </manifest>
         </archive>
         <descriptorRefs>
