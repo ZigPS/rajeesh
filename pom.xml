@@ -25,40 +25,9 @@
     <plugins>
       <plugin>
         <!-- Build an executable WAR -->
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.2</version>
-        <configuration>
-          <overlays>
-            <overlay>
-              <groupId>com.example.projects</groupId>
-              <artifactId>documentedprojectdependency</artifactId>
-              <excludes>
-                <exclude>WEB-INF/classes/images/sampleimage-dependency.jpg</exclude>
-              </excludes>
-            </overlay>
-          </overlays>
-        </configuration>
-        <artifactId>maven-assembly-plugin</artifactId>
-      <configuration>
-        <archive>
-          <manifest>
-            <mainClass>com.mycompany.App</mainClass>
-          </manifest>
-        </archive>
-        <descriptorRefs>
-          <descriptorRef>jar-with-dependencies</descriptorRef>
-        </descriptorRefs>
-      </configuration>
-      <executions>
-        <execution>
-          <id>make-assembly</id> 
-          <phase>package</phase> <!-- packaging phase -->
-          <goals>
-            <goal>single</goal>
-          </goals>
-        </execution>
-      </executions>
+        <artifactId>maven-resources-plugin</artifactId>
+          <version>2.6</version>
+        
       </plugin>
     </plugins>
   </build>
