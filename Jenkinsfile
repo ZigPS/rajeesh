@@ -10,7 +10,7 @@ pipeline {
           echo "Got version as ${datas.data.build} "
 	 echo "Got version as ${datas.data.test} "
 		def first = ${datas.data.build}	 
-				         
+			 }	         
 		    if( first == "maven")
 		    {
 		    withMaven(maven : 'maven_3_5_3') {
@@ -20,7 +20,7 @@ pipeline {
 		    {
 		    echo "in build else"
 		    }
-			 }
+			 
             }
         }
 
