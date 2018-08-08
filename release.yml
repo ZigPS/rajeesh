@@ -1,4 +1,25 @@
-data:
-  info: maven
-  aaa: bbb
-  ddd: ccc
+
+  settings:
+  stages: [build, test, quality, package, deploy]
+
+build:
+   stage: build
+  script: maven
+
+test:
+  stage: test
+  script: junit
+  
+quality:
+    stage: quality
+  script: sonar
+  
+ package:
+    stage: package
+  script: maven 
+
+deploy:
+  stage: deploy
+  # Limit job on specific branch
+  branches: master
+  script: copy
