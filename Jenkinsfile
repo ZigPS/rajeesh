@@ -12,7 +12,7 @@ pipeline {
 			def first =  ${datas.data.test}
 			echo first 
 			 	         
-		    if( ${datas.data.build} == 'maven')
+		    if( datas.data.build == 'maven')
 		    {
 		    withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn -B -V -U -e clean package'
