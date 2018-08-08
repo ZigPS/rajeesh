@@ -1,7 +1,4 @@
 
-  settings:
-  stages: [build, test, quality, package, deploy]
-
 build:
    stage: build
   script: maven
