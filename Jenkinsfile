@@ -8,6 +8,8 @@ pipeline {
 			 script {
           def datas = readYaml file: 'release.yml'
           echo "Got version as ${datas.app.info} "
+	  echo "Got version as ${datas.second.script} "
+	 echo "Got version as ${datas.third.script} "			 
 				         }
 		    withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn -B -V -U -e clean package'
