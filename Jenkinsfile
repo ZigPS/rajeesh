@@ -7,8 +7,7 @@ pipeline {
             steps {
 			 script {
           def datas = readYaml file: 'release.yml'
-          echo "Got version as ${datas.data.info} "
-	  echo "Got version as ${datas.data.build} "
+          echo "Got version as ${datas.data.build} "
 	 echo "Got version as ${datas.data.test} "			 
 				         }
 		    withMaven(maven : 'maven_3_5_3') {
