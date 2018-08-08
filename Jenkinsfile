@@ -8,10 +8,8 @@ pipeline {
 			 script {
           def datas = readYaml file: 'release.yml'
           echo "Got version as ${datas.data.build} "
-	 echo "Got version as ${datas.data.test} "
-			 
-			 	         
-		    if( datas.data.test == 'maven')
+	  		 	         
+		    if( datas.data.build == 'maven')
 		    {
 		    withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn -B -V -U -e clean package'
@@ -27,17 +25,39 @@ pipeline {
         stage ('Testing Stage') {
 		
 		steps {
+			script {
+          def datas = readYaml file: 'release.yml'
+          
+	 echo "Got version as ${datas.data.test} "
+	 
+	   if( datas.data.test == 'junit')
+		    {
 		junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
+			}else
+			{
+					    echo "in test else"			
+			}	
+					}		
 		       }     
         }
 	
 	    stage('Sonar') {
             steps {
                 echo 'Sonar Scanner'
+				script {
+          def datas = readYaml file: 'release.yml'   
+	 echo "Got version as ${datas.data.quality} "
                	//def scannerHome = tool 'SonarQube Scanner 3.0'
+				 if( datas.data.quality == 'sonar')
+		    {
 			    withSonarQubeEnv('Sonar') {
 			    	sh '/scratch/EDP/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner'
 			    }
+			}else
+			{
+				 echo "in quality else"		
+			}
+				}
             }
         }
 	stage ('Archival Stage') {
