@@ -1,4 +1,12 @@
-app-b:
+app:
   info: maven
   aaa: bbb
   ddd: ccc
+  
+ second:
+   stage: build
+  script: maven
+
+third:
+  stage: test
+  script: junit 
