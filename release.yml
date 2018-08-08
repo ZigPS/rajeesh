@@ -1,4 +1,4 @@
-data:
+app-build:
   info: maven
   aaa: bbb
   ddd: ccc
