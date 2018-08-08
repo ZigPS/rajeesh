@@ -1,12 +1,6 @@
-app:
-  info: maven
-  aaa: bbb
+data:
+  build: maven
+  test: junit
   ddd: ccc
   
- second:
-   stage: build
-  script: maven
-
-third:
-  stage: test
-  script: junit 
+ 
