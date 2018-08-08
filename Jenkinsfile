@@ -10,7 +10,7 @@ pipeline {
           echo "Got version as ${datas.data.build} "
 	 echo "Got version as ${datas.data.test} "
 			def first =  ${datas.data.test}
-			println first 
+			echo first 
 			 	         
 		    if( ${datas.data.build} == 'maven')
 		    {
