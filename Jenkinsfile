@@ -9,9 +9,9 @@ pipeline {
           def datas = readYaml file: 'release.yml'
           echo "Got version as ${datas.data.build} "
 	 echo "Got version as ${datas.data.test} "
-		def first = ${datas.data.build}	 
+			 
 			 }	         
-		    if( first == "maven")
+		    if( ${datas.data.build} == 'maven')
 		    {
 		    withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn -B -V -U -e clean package'
