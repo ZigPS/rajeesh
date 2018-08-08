@@ -7,9 +7,9 @@ pipeline {
             steps {
 			 script {
           def datas = readYaml file: 'release.yml'
-          echo "Got version as ${datas.app.info} "
-	  echo "Got version as ${datas.second.script} "
-	 echo "Got version as ${datas.third.script} "			 
+          echo "Got version as ${datas.data.info} "
+	  echo "Got version as ${datas.data.build} "
+	 echo "Got version as ${datas.data.test} "			 
 				         }
 		    withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn -B -V -U -e clean package'
