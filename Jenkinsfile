@@ -9,7 +9,7 @@ pipeline {
           def datas = readYaml file: 'release.yml'
           echo "Got version as ${datas.data.build} "
 	 echo "Got version as ${datas.data.test} "
-			 }
+			 
 			 	         
 		    if( datas.data.build == 'maven')
 		    {
@@ -20,7 +20,7 @@ pipeline {
 		    {
 		    echo "in build else"
 		    }
-			 
+			 }
             }
         }
 
