@@ -5,7 +5,11 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-			withMaven(maven : 'maven_3_5_3') {
+			 script {
+          def datas = readYaml file: 'release.yml'
+          echo "Got version as ${datas.info} "
+        }
+		    withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn -B -V -U -e clean package'
                 }
                
