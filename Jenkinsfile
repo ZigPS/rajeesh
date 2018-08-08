@@ -24,7 +24,7 @@ pipeline {
                 echo 'Sonar Scanner'
                	//def scannerHome = tool 'SonarQube Scanner 3.0'
 			    withSonarQubeEnv('Sonar') {
-			    	bat '/scratch/EDP/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner'
+			    	sh '/scratch/EDP/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner'
 			    }
             }
         }
