@@ -9,7 +9,7 @@ pipeline {
           def datas = readYaml file: 'release.yml'
           echo "Got tool as ${datas.data.build} "
 	  		 	         
-		    if( datas.data.build == 'ant')
+		    if( datas.data.build == 'maven')
 		    {
 		    withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn -B -V -U -e clean package'
