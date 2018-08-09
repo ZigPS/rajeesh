@@ -12,7 +12,7 @@ pipeline {
 		    if( datas.data.build == 'maven')
 		    {
 		    withMaven(maven : 'maven_3_5_3') {
-                    sh 'mvn -B -V -U -e clean package'
+                    sh 'mvn -B -V -U -e clean'
                 }
 		    }else
 		    {
