@@ -72,7 +72,9 @@ pipeline {
                     sh 'mvn package -DskipTests'
                 }
 			}else{
-				 echo "in package else"		
+				 echo "in package else"
+			    nexusPublisher nexusInstanceId: 'Nexus2', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'war/target/packagedPipieline.war']], mavenCoordinate: [artifactId: 'packagedPipieline.war', groupId: 'com.mycompany.app', packaging: 'war', version: '2.12']]]
+
 				}	}
 		       }     
         }
