@@ -73,7 +73,8 @@ pipeline {
                 }
 			}else{
 				 echo "in package else"
-			    nexusPublisher nexusInstanceId: 'Nexus2', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'my-app', groupId: 'com.mycompany.app', packaging: 'war', version: '1.0']]]
+			    nexusPublisher nexusInstanceId: 'Nexus2', nexusRepositoryId: 'SampleMavenProject', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'my-app', groupId: 'com.mycompany.app', packaging: 'war', version: '1.0']]]
+
 
 				}	}
 		       }     
