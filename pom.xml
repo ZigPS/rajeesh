@@ -38,5 +38,9 @@
     <id>releases</id>
     <url>http://blrgxr2913.in.oracle.com:8081/nexus/content/repositories/releases</url>
   </repository>
+     <repository>
+    <id>SampleMavenProject</id>
+    <url>http://blrgxr2913.in.oracle.com:8081/nexus/content/repositories/SampleMavenProject</url>
+  </repository>
 </distributionManagement>
 </project>
