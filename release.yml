@@ -2,7 +2,7 @@ data:
   build: maven
   test: junit
   quality: sonar
-  package: maven
+  package: nexus
   deploy: copy
   
  
