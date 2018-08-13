@@ -41,7 +41,7 @@ pipeline {
 		       }     
         }
 	
-	    stage('Sonar') {
+	    stage('Quality Analysis') {
             steps {
                 echo 'Sonar Scanner'
 				script {
