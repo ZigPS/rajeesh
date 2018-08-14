@@ -64,7 +64,7 @@
    </executions>
    <configuration>
       <serverId>nexus</serverId>
-      <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+      <nexusUrl>http://blrgxr2913.in.oracle.com:8081/nexus/</nexusUrl>
       <skipStaging>true</skipStaging>
    </configuration>
 </plugin>
