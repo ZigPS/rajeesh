@@ -6,7 +6,8 @@ pipeline {
 
             steps {
 			 script {
-          def datas = readYaml file: 'release.yml'
+          def datas = readYaml file: 'YamlInHtml.html'
+	  echo "Got new tool as ${datas.build} "
           echo "Got tool as ${datas.data.build} "
 	  		 	         
 		    if( datas.data.build == 'maven')
