@@ -3,6 +3,6 @@ data:
   test: junit
   quality: veracode
   package: nexus
-  deploy: copy
+  deploy: other
   
  
