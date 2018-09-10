@@ -1,7 +1,7 @@
 data:
   build: maven
   test: junit
-  quality: sonar
+  quality: veracode
   package: nexus
   deploy: copy
   
